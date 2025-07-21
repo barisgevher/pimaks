@@ -1,0 +1,6 @@
+@PIMAKS_HostAddress = http://localhost:5037
+
+GET {{PIMAKS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

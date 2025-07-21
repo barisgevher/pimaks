@@ -1,0 +1,46 @@
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+## NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Rider
+.idea/
+
+## Visual Studio Code
+.vscode/
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+## Others
+*.dbmdl
+*.bak
+*.cache
+*.tmp
+*.pidb
+*.svclog
+*.scc
+*.pdb
+
+## OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
