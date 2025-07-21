@@ -1,1 +1,73 @@
+# ===================================================================
+# Genel İşletim Sistemi ve Editör Dosyaları
+# ===================================================================
+.DS_Store
+Thumbs.db
+*.suo
+
+# ===================================================================
+# ASP.NET Core (Backend - Visual Studio / Rider)
+# ===================================================================
+
+# Kullanıcıya özel ayar dosyaları (her geliştiricide farklıdır)
+*.csproj.user
+*.sln.user
+*.DotSettings.user
+
+# Derleme sonuçları ve geçici dosyalar (en önemlileri)
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio IDE klasörü
 .vs/
+
+# Rider IDE klasörü
+.idea/
+
+# ReSharper önbelleği
+_ReSharper*/
+*.[Rr]esharper
+
+# Paketler (eski NuGet yapısı için)
+packages/
+*.nupkg
+
+# Veritabanı model dosyaları (scaffold ile üretilenler)
+*.dbmdl
+
+# Gizli anahtarlar (User Secrets ile yönetilir, asla commit edilmez)
+secrets.json
+
+# ===================================================================
+# React (Frontend - Create React App)
+# ===================================================================
+
+# Bağımlılıklar (npm install ile yeniden oluşturulur)
+/node_modules
+
+# Üretim (production) derleme çıktısı
+/build
+
+# Test kapsamı raporları
+/coverage
+
+# Log dosyaları
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ortam değişkenleri dosyaları (hassas bilgiler içerebilir)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===================================================================
+# VS Code
+# ===================================================================
+.vscode/
+
+# SQL Server Database Files
+*.mdf
+*.ldf
