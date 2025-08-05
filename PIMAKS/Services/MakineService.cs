@@ -27,7 +27,8 @@ namespace PIMAKS.Services
                    BirimFiyat = m.BirimFiyat,
                    MarkaAdi = m.Marka.Marka1,
                    TipAdi = m.Tip.MakineTipi1,
-                   YakitAdi = m.Yakit.Yakit1
+                   YakitAdi = m.Yakit.Yakit1,
+                   KiradaMi = m.KiradaMi
                }).ToListAsync();
         }
 

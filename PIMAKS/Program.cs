@@ -18,6 +18,7 @@ builder.Services.AddScoped<INakliyeService, NakliyeService>();
 builder.Services.AddScoped<ICariService, CariService>();
 builder.Services.AddScoped<IMakineService, MakineService>();
 builder.Services.AddScoped<ITedarikciService, TedarikciService>();
+builder.Services.AddScoped<IIstatistikService, IstatistikService>();
 
 
 builder.Services.AddDbContext<PimaksDbContext>(options =>

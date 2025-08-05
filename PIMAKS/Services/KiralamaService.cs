@@ -65,6 +65,18 @@ namespace PIMAKS.Services
         public async Task<KiralamaDto> CreateKiralamaAndNakliyeAsync(KiralamaVeNakliyeCreateDto dto)
         {
 
+            var makine = await _context.Makines.FindAsync(dto.MakineId);
+            if (makine == null)
+            {
+                throw new Exception("Geçersiz makine ID.");
+            }
+
+
+            var gunSayisi = (dto.BitisTarihi - dto.BaslangicTarihi).TotalDays + 1;
+            if (gunSayisi < 0) gunSayisi = 1;
+
+            decimal toplamBorc = ((decimal)makine.BirimFiyat * (decimal)gunSayisi) + dto.NakliyeUcreti;
+
             var yeniNakliye = new Nakliye
             {
                 FirmaId = dto.NakliyeFirmasiId,
@@ -85,6 +97,16 @@ namespace PIMAKS.Services
 
                 Nakliye = yeniNakliye
             };
+
+            //var yeniCariBorc = new CariBorc
+            //{
+            //    FirmaId = dto.FirmaId,
+            //    //CariBorc1 = (int)toplamBorc,
+            //    //Tarih = DateTime.UtcNow,
+            //    //Aciklama = $"{makine.MakineKodu} kodlu makine için {gunSayisi} günlük kiralama ve nakliye ücreti",
+            //    //Kiralama = yeniKiralama
+            //    Tutar = dto.
+            //};
 
             _context.Kiralamas.Add(yeniKiralama);
 

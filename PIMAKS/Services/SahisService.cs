@@ -18,6 +18,7 @@ namespace PIMAKS.Services
         {
             var entitiy = new Sahis
             {
+                FirmaId = dto.FirmaId,
                 SahisAdi = dto.SahisAdi,
                 SahisTc = dto.SahisTc,
                 SahisMail = dto.SahisMail,
@@ -59,8 +60,7 @@ namespace PIMAKS.Services
                     SahisMail = s.SahisMail,
                     SahisTc = s.SahisTc,
                     SahisTelefon = s.SahisTelefon
-                })
-                .Take(20) // ÖNEMLİ: Sonuç sayısını sınırla!
+                })               
                 .ToListAsync();
         }
     }

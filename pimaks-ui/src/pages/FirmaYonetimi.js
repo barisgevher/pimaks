@@ -17,6 +17,7 @@ const initialFirmaState = {
 };
 
 const initialSahisState = {
+  firmaId: "",
   sahisAdi: "",
   sahisTc: "",
   sahisTelefon: "",
@@ -63,7 +64,15 @@ function FirmaYonetimi() {
     e.preventDefault();
     setModalHata("");
     setIsModalLoading(true);
+
+    const dataToSend = {
+      ...yeniSahis,
+      firmaId: parseInt(yeniSahis.firmaId) || 0,
+    };
+
     try {
+      console.log("👤 API'ye gönderilecek Şahıs objesi:", dataToSend);
+
       const res = await api.post("/sahis", yeniSahis);
       const olusturulanSahis = res.data;
       setIsModalOpen(false);
@@ -304,6 +313,19 @@ function FirmaYonetimi() {
           <div
             style={{ display: "flex", flexDirection: "column", gap: "10px" }}
           >
+            <select
+              name="firmaId"
+              value={yeniSahis.firmaId}
+              onChange={handleModalInput}
+              required
+            >
+              <option value="">Bağlı Olacağı Firmayı Seçin</option>
+              {firmalar.map((firma) => (
+                <option key={firma.firmaId} value={firma.firmaId}>
+                  {firma.firmaAdi}
+                </option>
+              ))}
+            </select>
             <input
               name="sahisAdi"
               placeholder="Adı Soyadı"

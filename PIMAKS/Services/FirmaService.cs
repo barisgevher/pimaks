@@ -24,7 +24,7 @@ namespace PIMAKS.Services
                     TelefonNo = f.TelefonNo,
                     AdresIl = f.AdresIl,
                     AdresIlce = f.AdresIlce,
-                    ToplamCariBorc = f.CariBorcs.Sum(b => (decimal?)b.CariBorc1) ?? 0
+                    ToplamCariBorc = f.CariBorcs.Sum(b => (decimal?)b.Tutar) ?? 0
 
                 })
                 .ToListAsync();

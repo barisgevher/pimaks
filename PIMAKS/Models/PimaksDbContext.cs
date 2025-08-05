@@ -48,7 +48,7 @@ public partial class PimaksDbContext : DbContext
             entity.ToTable("CariBorc");
 
             entity.Property(e => e.CariBorcId).HasColumnName("CariBorcID");
-            entity.Property(e => e.CariBorc1).HasColumnName("CariBorc");
+            entity.Property(e => e.Tutar).HasColumnName("CariBorc");
             entity.Property(e => e.FirmaId).HasColumnName("FirmaID");
 
             entity.HasOne(d => d.Firma).WithMany(p => p.CariBorcs)

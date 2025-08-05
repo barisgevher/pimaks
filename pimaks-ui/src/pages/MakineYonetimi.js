@@ -282,7 +282,10 @@ function MakineYonetimi() {
         </thead>
         <tbody>
           {makineler.map((m) => (
-            <tr key={m.makineId}>
+            <tr
+              key={m.makineId}
+              style={{ backgroundColor: m.kiradaMi ? "#e8f5e9" : "#ffebee" }}
+            >
               <td>{m.makineKodu}</td>
               <td>{m.markaAdi}</td>
               <td>{m.model}</td>

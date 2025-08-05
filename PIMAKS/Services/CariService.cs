@@ -17,7 +17,7 @@ namespace PIMAKS.Services
                 {
                     FirmaId = f.FirmaId,
                     FirmaAdi = f.FirmaAdi,
-                    ToplamBorc = f.CariBorcs.Sum(b => (decimal?)b.CariBorc1)?? 0
+                    ToplamBorc = f.CariBorcs.Sum(b => (decimal?)b.Tutar)?? 0
                 })
                 .ToListAsync();
 

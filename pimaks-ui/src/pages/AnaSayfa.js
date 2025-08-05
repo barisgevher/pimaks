@@ -54,6 +54,9 @@ function AnaSayfa() {
           <li>
             <Link to="/finans">💰 Cari Hesap ve Tahsilat</Link>
           </li>
+          <li>
+            <Link to="/istatistikler">📊 İstatistikler</Link>
+          </li>
         </ul>
       </div>
     </div>

@@ -32,7 +32,7 @@ namespace PIMAKS.Services
 
         public async Task<decimal> GetToplamCariBorcAsync()
         {
-            return await _context.CariBorcs.SumAsync(b => (decimal?)b.CariBorc1) ?? 0;
+            return await _context.CariBorcs.SumAsync(b => (decimal?)b.Tutar) ?? 0;
         }
 
 

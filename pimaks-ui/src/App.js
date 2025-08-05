@@ -6,6 +6,7 @@ import KiralamaYonetimi from "./pages/KiralamaYonetimi";
 import NakliyeYonetimi from "./pages/NakliyeYonetimi";
 import CariTahsilatYonetimi from "./pages/CariTahsilatYonetimi";
 import MakineYonetimi from "./pages/MakineYonetimi";
+import IstatistikSayfasi from "./pages/IstatistikSayfasi";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/kiraliklar" element={<KiralamaYonetimi />} />
         <Route path="/nakliye" element={<NakliyeYonetimi />} />
         <Route path="/finans" element={<CariTahsilatYonetimi />} />
+        <Route path="/istatistikler" element={<IstatistikSayfasi />} />
         <Route path="/" element={<TestApi />} />
       </Routes>
     </Router>
