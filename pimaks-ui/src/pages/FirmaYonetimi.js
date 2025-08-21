@@ -36,7 +36,6 @@ function FirmaYonetimi() {
   const [isModalLoading, setIsModalLoading] = useState(false);
   const [selectKey, setSelectKey] = useState(0);
 
-  // useEffect'iniz doğru ve burada kalabilir...
   useEffect(() => {
     const fetchFirmalar = async () => {
       setLoading(true);
@@ -51,9 +50,6 @@ function FirmaYonetimi() {
     };
     fetchFirmalar();
   }, []);
-
-  // Tüm handler fonksiyonlarınız (handleModalInput, handleSahisSubmit, vb.)
-  // büyük ölçüde doğru, sadece handleSubmit'i güncelliyoruz.
 
   const handleModalInput = (e) => {
     const { name, value } = e.target;
