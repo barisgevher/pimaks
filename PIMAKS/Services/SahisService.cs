@@ -20,6 +20,7 @@ namespace PIMAKS.Services
             {
                 FirmaId = dto.FirmaId,
                 SahisAdi = dto.SahisAdi,
+                Unvan = dto.Unvan,
                 SahisTc = dto.SahisTc,
                 SahisMail = dto.SahisMail,
                 SahisTelefon = dto.SahisTelefon
@@ -33,14 +34,13 @@ namespace PIMAKS.Services
         }
         public async Task<IEnumerable<SahisDto>> GetAllSahislarAsync(string? searchTerm = null, int? firmaId = null)
         {
-            // Temel sorguyu oluşturuyoruz, henüz veritabanından çekmiyoruz.
+            
             var query = _context.Sahis.AsQueryable();
 
-            // Eğer bir arama terimi geldiyse, veritabanı seviyesinde filtrele.
-            // Bu, tüm veriyi belleğe çekmekten çok daha performanslıdır.
+            
             if (!string.IsNullOrWhiteSpace(searchTerm))
             {
-                // Sahis adında arama terimini içerenleri bul
+                
                 query = query.Where(s => s.SahisAdi.Contains(searchTerm));
             }
 
@@ -50,8 +50,7 @@ namespace PIMAKS.Services
                 query = query.Where(s => s.FirmaId == firmaId.Value);
             }
 
-            // Sonuçları DTO'ya dönüştür ve sadece ilk 20 kaydı al.
-            // Bu, arama terimi boş olsa bile tüm veritabanını göndermeyi engeller.
+            
             return await query
                 .Select(s => new SahisDto
                 {

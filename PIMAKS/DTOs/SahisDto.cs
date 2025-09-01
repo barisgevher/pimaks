@@ -8,9 +8,11 @@ namespace PIMAKS.DTOs
 
         public int SahisId { get; set; }
 
-        public int FirmaId {  get; set; }
+        public int? FirmaId {  get; set; }
 
         public string SahisAdi { get; set; } = null!;
+
+        public string? Unvan { get; set; }
 
         public string? SahisTc { get; set; }
 

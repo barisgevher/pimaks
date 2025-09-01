@@ -9,9 +9,9 @@ namespace PIMAKS.Controllers
     [ApiController]
     public class IstatistikController : ControllerBase
     {
-        private readonly IstatistikService _istatistikService;
+        private readonly IIstatistikService _istatistikService;
 
-        public IstatistikController(IstatistikService istatistikService)
+        public IstatistikController(IIstatistikService istatistikService)
         {
             _istatistikService = istatistikService;
         }

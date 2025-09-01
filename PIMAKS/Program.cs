@@ -1,6 +1,9 @@
 using PIMAKS.Models;
 using Microsoft.EntityFrameworkCore;
 using PIMAKS.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,11 +42,37 @@ builder.Services.AddCors(options =>
 });
 
 
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false; // turn true in deployment.
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true, 
+        ValidateAudience = true, 
+        ValidateLifetime = true, 
+        ValidateIssuerSigningKey = true, 
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ClockSkew = TimeSpan.Zero 
+    };
+});
+
+builder.Services.AddAuthorization(); 
 
 
 var app = builder.Build();
 
-//// Configure the HTTP request pipeline.
+
 //if (app.Environment.IsDevelopment())
 //{
 //    app.UseSwagger();
@@ -53,6 +82,8 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app.UseCors("AllowReact");
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

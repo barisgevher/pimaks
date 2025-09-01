@@ -7,11 +7,13 @@ public partial class Sahis
 {
     public int SahisId { get; set; }
 
-    public int FirmaId { get; set; }
+    public int? FirmaId { get; set; }
 
     public string SahisAdi { get; set; } = null!;
 
     public string? SahisTc { get; set; }
+
+    public string? Unvan { get; set; }
 
     public string SahisTelefon { get; set; } = null!;
 

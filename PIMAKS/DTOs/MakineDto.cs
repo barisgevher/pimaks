@@ -28,7 +28,7 @@ namespace PIMAKS.DTOs
 
         public bool KiradaMi { get; set; }
 
-        public int BirimFiyat { get; set; }
+        public int? BirimFiyat { get; set; }
 
         public string? CalismaYuzdesi { get; set; }
 

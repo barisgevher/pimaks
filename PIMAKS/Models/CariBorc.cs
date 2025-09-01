@@ -10,7 +10,7 @@ public partial class CariBorc
 
     public int FirmaId { get; set; }
 
-    [Column(TypeName = "decimal(18, 2)")] // Veritabanında doğru tipi garantiler
+    [Column(TypeName = "decimal(18, 2)")] 
     public decimal Tutar { get; set; }
 
     public virtual Firma Firma { get; set; } = null!;

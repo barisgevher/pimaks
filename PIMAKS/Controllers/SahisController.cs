@@ -17,7 +17,7 @@ public class SahisController : ControllerBase
         _service = service;
     }
 
-    // SahisController.cs içinde
+   
     [HttpGet]
     public async Task<ActionResult<IEnumerable<SahisDto>>> GetAllSahislar([FromQuery] string? searchTerm, [FromQuery] int? firmaId)
     {
