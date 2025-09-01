@@ -117,7 +117,6 @@ function FirmaYonetimi() {
     setYeniFirma((prev) => ({ ...prev, [name]: val }));
   };
 
-  // --- İŞTE DÜZELTİLMİŞ handleSubmit ---
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHata("");
