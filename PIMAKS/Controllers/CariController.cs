@@ -17,10 +17,10 @@ namespace PIMAKS.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll() =>
-            Ok(await _service.GetAllCariAsync());
+            Ok(await _service.GetAllFirmaCariAsync());
 
         [HttpPost("tahsilat")]
-        public async Task<IActionResult> Tahsilat([FromBody] TahsilatDto dto) =>           
+        public async Task<IActionResult> Tahsilat([FromBody] TahsilatCreateDto dto) =>           
             Ok(await _service.AddTahsilatAsync(dto));
 
     }
